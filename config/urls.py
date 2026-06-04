@@ -23,6 +23,7 @@ def api_root(request):
 
 urlpatterns = [
     path('', api_root, name='api-root'),
+    path('api/', api_root, name='api-root-alt'),
     path('admin/', admin.site.urls),
 
     # ── Auth ──────────────────────────────────────────
