@@ -287,3 +287,4 @@ curl -X POST http://localhost:8000/api/clientes/ \
 | mysqlclient                      | Conector MySQL             |
 | django-cors-headers              | CORS para frontend/móvil   |
 | python-decouple                  | Variables de entorno .env  |
+# TallerMecanico_Ali
