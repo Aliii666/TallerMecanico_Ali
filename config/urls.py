@@ -1,9 +1,28 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.http import JsonResponse
 from rest_framework_simplejwt.views import TokenRefreshView
 from taller_mecanico.usuarios.views import LoginView, RegistroView, PerfilView
 
+def api_root(request):
+    return JsonResponse({
+        "message": "Bienvenido a la API de Taller Mecánico Ali",
+        "status": "online",
+        "version": "1.0.0",
+        "endpoints": {
+            "auth": "/api/auth/",
+            "clientes": "/api/clientes/",
+            "vehiculos": "/api/vehiculos/",
+            "servicios": "/api/servicios/",
+            "ordenes": "/api/ordenes/",
+            "facturas": "/api/facturas/",
+            "pagos": "/api/pagos/",
+            "admin": "/admin/"
+        }
+    })
+
 urlpatterns = [
+    path('', api_root, name='api-root'),
     path('admin/', admin.site.urls),
 
     # ── Auth ──────────────────────────────────────────
